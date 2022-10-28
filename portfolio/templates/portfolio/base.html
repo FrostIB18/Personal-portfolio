@@ -1,0 +1,42 @@
+{% extends 'portfolio/head.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center my-3">
+  <div class="col-5">
+    <img src="{% static 'portfolio/my_img.jpg' %}" class="img-fluid">
+  </div>
+</div>
+
+<div class="row justify-content-center mb-3">
+  <div class="col-md-9 text-center">
+    <h1 id="hometext" class="font-weight-bold">Ivan Burakov is Junior Python Developer with aerospace engineering background 🚀</h1>
+  </div>
+</div>
+
+<h2 class="mt-5">Portfolio</h2>
+<hr>
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6 mx-auto" >
+    <a style="color: black" href="{% url 'port' project.id %}">
+      <img src="{{ project.image_1.url }}" class="img-fluid mb-2" >
+      <h3>{{ project.title }}</h3>
+    </a>
+    {{ project.short_description }}
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
+
+
+    <!--{% if project.url %}
+    <a href="{{ project.url }}" target="_blank">
+        <img src="{{ project.image.url }}" class="img-fluid mb-2" >
+    </a>
+    {% else %}
+
+    <img src="{{ project.image.url }}" class="img-fluid mb-2" >
+    {% endif %}-->
