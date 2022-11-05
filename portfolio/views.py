@@ -4,7 +4,7 @@ from .models import Project
 
 # Create your views here.
 def base(request):
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by('-date')
     return render(request, 'portfolio/base.html', {'projects': projects})
 
 def port(request, work_id):

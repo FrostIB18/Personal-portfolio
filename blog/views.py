@@ -4,7 +4,7 @@ from .models import Blog
 # Create your views here.
 def all_blogs(request):
     blogs_count = Blog.objects.count
-    blogs = Blog.objects.order_by()
+    blogs = Blog.objects.order_by('-date')
     return render(request, 'blog/all_blogs.html', {'blogs':blogs, 'blogs_count':blogs_count})
 
 def detail(request, blog_id):

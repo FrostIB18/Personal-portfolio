@@ -19,7 +19,7 @@
 <hr>
 <div class="row">
   {% for project in projects %}
-  <div class="col-lg-4 col-md-6 mx-auto" >
+  <div class="col-lg-4 col-md-6 gy-3 mx-auto" >
     <a style="color: black" href="{% url 'port' project.id %}">
       <img src="{{ project.image_1.url }}" class="img-fluid mb-2" >
       <h3>{{ project.title }}</h3>

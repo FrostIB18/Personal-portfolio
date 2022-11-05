@@ -1,4 +1,8 @@
 from django.contrib import admin
 from .models import Project
-# Register your models here.
-admin.site.register(Project)
+
+
+class Date_output(admin.ModelAdmin):
+    readonly_fields = ('date',)
+
+admin.site.register(Project, Date_output)
