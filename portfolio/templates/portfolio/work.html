@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-
-  <div id="carouselExampleIndicators" class="carousel slider carousel-dark w-75 h-75 mx-auto" data-bs-ride="true">
+<div class="container-fluid mx-auto">
+  <div id="carouselExampleIndicators" class="carousel slider carousel-dark" data-bs-ride="true">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -33,15 +33,13 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-<!--<img src="{{ work.image.url }}" class="img-fluid mb-2" >-->
-
-
-<div class="mx-auto w-75">
-  <div class="mx-auto w-75">
-    <h1 class="text mt-5" id="projectdetailtitle">{{ work.title }}</h1>
-    <p align="justify">{{ work.long_description|safe }}</p>
-  </div>
+    <div class="mx-auto w-75">
+      <h1 class="text mt-5" id="projectdetailtitle">{{ work.title }}</h1>
+      <p align="justify">{{ work.long_description|safe }}</p>
+    </div>
 </div>
+
+
 
 
 {% endblock %}
